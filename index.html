@@ -1,11 +1,12 @@
 <html>
     <head>
         <title>Dashboard</title>
-        <script>
+        <script type="text/javascript">
             function HTMLtoPDF() {
                 var doc=new jsPDF();
                 doc.fromHTML($('#HTMLtoPDF').get(0),20,20,{'width':500});
-                doc.save('report.pdf')
+                doc.save('report.pdf');
+            }
         </script>
     </head>
     <body>

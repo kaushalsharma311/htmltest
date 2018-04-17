@@ -1,9 +1,12 @@
 <html>
     <head>
         <title>Dashboard</title>
-        <script src="js/jspdf.js"></script>
-        <script src="js/jquery-2.1.3.js"></script>
-        <script src="js/pdfFromHTML.js"></script>
+        <script>
+            function HTMLtoPDF() {
+                var doc=new jsPDF();
+                doc.fromHTML($('#HTMLtoPDF').get(0),20,20,{'width':500});
+                doc.save('report.pdf')
+        </script>
     </head>
     <body>
         <div id="HTMLtoPDF">

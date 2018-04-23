@@ -34,18 +34,12 @@
     <body>
 		<div class="blue">
 			<img class="mckessonlogo" src="images/mckesson.jpg" />
-			<form action="" class="form">
-				<p class="text">Dashboard:</p>
-				<input type="text" name="dashboard" >
-				<ol class="text">
-					<li><a href="report.php?d=1" class="a">Customer Profitability</a></li>
-					<li><a href="report.php?d=2" class="a">Human Resources</a></li>
-					<li><a href="report.php?d=3" class="a">IT Spend Analysis</a></li>
-					<li><a href="report.php?d=4" class="a">Opportunity Analysis</a></li>
-				</ol>
-				<input type="submit" value="Search">
-			</form>
 		</div>
-        
+        <div class="iframe" id="HTMLtoPDF">
+			<iframe height='600px' width='100%' src="https://app.powerbi.com/view?r=eyJrIjoiODM2YTE1ZGYtZmMzYS00YWMyLWFkNjYtNTliOTNkYjhkODRjIiwidCI6ImRhNjdlZjFiLWNhNTktNGRiMi05YThjLWFhOGQ5NDYxN2ExNiIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>        
+        </div>
+        <button onclick="HTMLtoPDF()">Download</button>
+		<button onclick="screenshot()">Screenshot</button>
+		<button onclick="print()">Print</button>
     </body>
 </html>

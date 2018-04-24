@@ -4,7 +4,18 @@
 		<script src='js/jquery-1.7.1.min.js' type='text/javascript'></script>
 		<script src="js/jspdf.js" type='text/javascript'></script>
 		<script src='js/jspdf.debug.js' type='text/javascript'></script>
+		<script src='js/html2canvas.js' type='text/javascript'></script>
+		<link type="text/css" rel="stylesheet" href="css/style.css">
 
+		<script>
+ function change_tab(id)
+ {
+   document.getElementById("page_content").innerHTML=document.getElementById(id+"_desc").innerHTML;
+   document.getElementById("page1").className="notselected";
+   document.getElementById("page2").className="notselected";
+   document.getElementById(id).className="selected";
+ }
+</script>
         <script type="text/javascript">
             function HTMLtoPDF() {
                 var doc=new jsPDF();
@@ -12,11 +23,80 @@
                 doc.save('report.pdf');
             }
         </script>
-    </head>
+		<script type="text/javascript">
+            function screenshot() {
+					html2canvas(document.body).then(function(canvas) {
+					document.body.appendChild(canvas);
+					});
+				}
+        </script>
+		<script type="text/javascript">
+            function print() {
+					var element = document.getElementById('#HTMLtoPDF');
+					var report = powerbi.get(element);
+
+					element.print().catch(function (errors) { Log.log(errors); });
+				}
+        </script>
+	</head>
     <body>
-        <div id="HTMLtoPDF">
-            <h3>jhaxfnoho xfehoi</h3>
-        </div>
-        <button onclick="HTMLtoPDF()">Download</button>
+		<div class="header">
+			<img class="mckessonlogo" src="images/mckesson.jpg" />
+			<div class="header-list">
+				<pre class="text">Help | Contact Us | Sign Out</pre>
+			</div>
+			<h4 class="name">Welcome<br>Kaushal Sharma</h4>
+		</div>
+		<div class="blue">
+			<h1 class="text-white">McKesson Dashboard Repository</h1>
+		</div>
+		<div class="wrapper">
+		<div id="main_content">
+
+			<li class="selected" id="page1" onclick="change_tab(this.id);">McKesson Medical Surgical</li>
+			<li class="notselected" id="page2" onclick="change_tab(this.id);">McKesson US Pharma</li>
+
+			<div class='hidden_desc' id="page1_desc">
+				<form action="">
+					<h3>Select the Dashoard</h3>
+					<input type="text" name="dashboard" >
+					<input type="submit" value="Search"><br><br>
+					<table class="table1">
+						<tr><td><a href="report.php?d=1" class="text">GPO Sales Analysis</a></td></tr>					
+						<tr><td><a href="report.php?d=2" class="text">Customer Profitability</a></td></tr>
+						<tr><td><a href="report.php?d=3" class="text">Human Resources</a></td></tr>
+					</table>
+				</form>
+			</div>
+			
+			<div class='hidden_desc' id="page2_desc">
+				<form action="">
+					<h3>Select the Dashoard</h3>
+					<input type="text" name="dashboard" >
+					<input type="submit" value="Search"><br><br>
+					<table class="table1">
+						<tr><td><a href="report.php?d=4" class="text">IT Spend Analysis</a></td></tr>
+						<tr><td><a href="report.php?d=5" class="text">Opportunity Analysis</a></td></tr>
+					</table>
+				</form>
+			</div>
+			
+			<div id="page_content">
+				<form action="">
+					<h3 class="text">Select the Dashoard</h3>
+					<input type="text" name="dashboard" >
+					<input type="submit" value="Search"><br><br>
+					<table class="table1">
+						<tr><td><a href="report.php?d=1" class="text">GPO Sales Analysis</a></td></tr>					
+						<tr><td><a href="report.php?d=2" class="text">Customer Profitability</a></td></tr>
+						<tr><td><a href="report.php?d=3" class="text">Human Resources</a></td></tr>
+					</table>
+				</form>
+			</div>
+		</div>
+		</div>  
+		<div class="footer">
+			<b class="footer-text">Developed by : McKesson Data Insights and Automation Team</b>
+		</div>
     </body>
 </html>

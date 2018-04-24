@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .header{
 	position: absolute;
     top: 0;
@@ -82,6 +83,27 @@
 .iframe{
 	position: absolute;
 	top: 100px;
+=======
+.blue{
+	position: absolute;
+    top: 0;
+	left: 0;
+	border: none;
+    background-color: #005a8c;
+	height: 100%;
+	width: 100%;
+}
+.mckessonlogo{
+	position: absolute;
+	top: 0px;
+	right:0px;
+	height: 50px;
+	width: 150px;
+}
+.iframe{
+	position: absolute;
+	top: 50px;
+>>>>>>> cb2c046261e6c49adfa9e06e898728590cb11599
 	left: 0;
 	height: 600px;
 	width: 100%;
@@ -91,6 +113,7 @@
 	left:30%;
 	top:40%;
 }
+<<<<<<< HEAD
 
 .button{
 	position: absolute;
@@ -170,12 +193,26 @@
 .blue-header{
 	position: absolute;
     top: 50px;
+=======
+.text{
+	font-weight: bold;
+	color: white;
+}
+.a {
+	color: white;
+    text-decoration: none;
+}
+.header{
+	position: absolute;
+    top: 0;
+>>>>>>> cb2c046261e6c49adfa9e06e898728590cb11599
 	left: 0;
 	border: none;
     background-color: #005a8c;
 	height: 50px;
 	width: 100%;
 }
+<<<<<<< HEAD
 
 .footer{
   position: absolute;
@@ -194,4 +231,17 @@
 	left: 35%;
 	border: none;
     color: white;
+=======
+.button{
+	position: absolute;
+	top:660px;
+}
+.header-text{
+	position: absolute;
+    top: -15px;
+	left: 35%;
+	position: absolute;
+	color: white;
+	text-align: center
+>>>>>>> cb2c046261e6c49adfa9e06e898728590cb11599
 }
